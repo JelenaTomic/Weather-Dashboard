@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link  rel="stylesheet" href="./assets/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/6d4035b361.js" crossorigin="anonymous"></script>
+
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header class="row sticky-top">
+        <h1 class="col-12">Weather Dashboard</h1>
+    </header>
+    <div class="content">
+        <div class="aside">
+            <div class="row mb-1">
+                <h4>City Search</h4>
+            </div>
+            <div class="row">
+                <input id="searchBar" class="p-1" placeholder="City">
+                <div class="searchBtn"><i class="fa-solid fa-earth-americas"></i></div>
+            </div>
+            <ul id="searchHistory" class="col-12 shadow-sm">
+            </ul>
+        </div>
+        <div id="cityInfo" class="container-fluid">
+            <h3 id="displayCity" class="row"></h3>
+            <div id="temperature" class="row">Temperature</div>
+            <div id="humidity" class="row">Humidity</div>
+            <div id="wind" class="row">Wind</div>
+            <div class="row">UV<span id="uv"></span></div>
+        </div>
+        <h3 id="forecastTitle">Forecast for next 5 days</h3>
+        <div id="forecast" class="row">
+            <div class="card">
+                <div class="row">Date</div>
+                <i></i>
+                <div class="row">Temperature</div>
+                <div class="row">Humidity</div>
+            </div>
+            <div class="card">
+                <div class="row">Date</div>
+                <i></i>
+                <div class="row">Temperature</div>
+                <div class="row">Humidity</div>
+            </div>
+            <div class="card">
+                <div class="row">Date</div>
+                <i></i>
+                <div class="row">Temperature</div>
+                <div class="row">Humidity</div>
+            </div>
+            <div class="card">
+                <div class="row">Date</div>
+                <i></i>
+                <div class="row">Temperature</div>
+                <div class="row">Humidity</div>
+            </div>
+            <div class="card">
+                <div class="row">Date</div>
+                <i></i>
+                <div class="row">Temperature</div>
+                <div class="row">Humidity</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
