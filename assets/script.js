@@ -45,11 +45,18 @@ $(document).ready(function() {
                 $forecast[i].children[1].setAttribute("class", "fa-solid fa-clouds");
             }
             else if (icon == "Snow") {
-                $forecast[i].children[1].setAttribute("class","fa-solid fa-snowflakes");
+                $forecast[i].children[1].setAttribute("class","fa-solid fa-snowflakes")
             }
             else {
                 $forecast[i].children[1].setAttribute("class", "fa-solid fa-wrench");  
             }
         }
     }
+    loadHistory();
+    $(".searchBtn").on("click", function() {
+        savedHistory();
+        cityVar = $("#searchBar").val();
+        weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityVar}&appid=${api_key}`;
+        forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityVar}&appid=${api_key}`;
+    })
 })
