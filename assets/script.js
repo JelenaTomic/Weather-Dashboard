@@ -8,6 +8,9 @@ $(document).ready(function() {
     var history;
     var cityName;
     var $forecast = document.querySelector(".card");
+    var lat = "";
+    var lon = ""
+    
 // local storage for city search 
     function loadHistory() {
         if (!localStorage.getItem("index")) {
@@ -52,11 +55,59 @@ $(document).ready(function() {
             }
         }
     }
+    // search button
     loadHistory();
     $(".searchBtn").on("click", function() {
         savedHistory();
         cityVar = $("#searchBar").val();
         weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityVar}&appid=${api_key}`;
         forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityVar}&appid=${api_key}`;
+
+        cityName++;
+        localStorage.setItem(`City: ${cityName}`, `${cityVar}`);
+        localStorage.setItem(`name`, `${cityName}`);
+        var $newCity = $(`<li class="history" type="button">${cityVar}</li>`);
+        var $hr = $("<hr>");
+        $("#searchHistory").prepend($hr);
+        $("#searchHistory").prepend($newCity);
+
+        $.ajax({
+            url: weatherURL 
+        })
+        .then(function(response) {
+            lon = response.coord.lon;
+            lat = response.coord.lat;
+            $("#displayCity").text(`${response.name}  (${date})`);
+            var tempF = ((response.main.temp - 273.15) * 9/5 + 32).toPrecision(2);
+            var tempC = (response.main.temp - 273.15).toPrecision(2);
+            $("#temperature").text(`Temperature: ${tempF}\u00B0F / ${tempC}\u00B0C`);
+            $("#humidity").text(`Humidity ${response.main.humidity}%`);
+            $("#wind").text(`Wind   ${response.wind.speed} MPH`);
+
+            uviURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${api_key}&lon=${lon}&lat=${lat}`; 
+            $.ajax({
+                url: uviURL 
+            })
+            .then(function(newResponse) {
+                var uvi = newResponse.value;
+                $("#uv").text(uvi);
+                if (uvi <= 2) {
+                    $("#uv").css("background-color", "#77DF78");
+                    $("#uv").css("color", "black");
+                }
+                else if (uvi <= 5) {
+                    $("#uv").css("background-color", "#FEFD95");
+                    $("#uv").css("color", "black");
+                }
+                else if (uvi <= 7) {
+                    $("#uv").css("background-color", "#FF8A5D");
+                }
+                else if (uvi <= 10) {
+                    $("#uv").css("background-color", "#FF6663");
+                }else {
+                    $("#uv").css("background-color", "#C38EC6");
+                }
+            });
+        });
     })
 })
