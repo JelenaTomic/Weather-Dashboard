@@ -1,0 +1,118 @@
+header {
+    font-family: 'Lobster Two', cursive;
+    text-align: center;
+    padding: 20px;
+    color: #5FA3C8;
+    background-color: #F0F8FF;
+    
+}
+
+.content{
+    font-family: 'Edu QLD Beginner';
+    font-size: 20px;
+    border-left: 1px solid #72A9DF;
+    padding: 10px;
+  
+
+}
+
+.aside {
+    float: left;
+    min-width: 30vw;
+    height: 100vh;
+    padding: 20px 20px 20px 30px;
+    margin-right: 15px;
+    background-color: #D9E9F9;
+    position: static;
+}
+
+.searchBtn {
+    position: relative;
+    top: 3px;
+
+}
+
+#searchBar {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-radius: 0;
+    border-bottom:  10px solid #72A9DF;
+    font-size: 15px;
+}
+
+#searchHistory {
+    background-color: #F0F8FF;
+    border-radius: 55px;
+    border-radius: 0;
+    border-bottom:  10px solid #72A9DF;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#searchHistory li {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#cityInfo {
+    width: 73vw;
+    padding-bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    border: #AACCEE (200, 200, 200, 0.8);
+    border-width: 10px;
+    border-style: solid;
+    position: relative;
+    left: 12.5vw;
+    top: 1vh;
+}
+
+#cityInfo div {
+    position: relative;
+    right: 10vw;
+    padding: 15px;
+    font: size 15px;;
+}
+
+#displayCity {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#uv {
+    position: relative;
+    left: 10px;
+    top: -5px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+#forecastTitle {
+    position: relative;
+    left: 1%;
+}
+
+#forecast {
+    width: 73vw;
+}
+
+#forecast div {
+    background-color: #9EC2E5;
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    min-width: 17%;
+    font-size: 15px;
+}
+
+#forecast i {
+    position: relative;
+    left: 3%;
+    font-size: 50px;
+}
+.card div {
+    position: relative;
+    left: -20px;
+}

@@ -23,4 +23,33 @@ $(document).ready(function() {
             }
         }
     }
+
+    function savedHistory() {
+        if (history==false) {
+            $("#searchHistory").empty();
+            history = true;
+        }
+    }
+// icon depending on the weather 
+    function icons() {
+    
+        for (let i=0; i<$forecast.length; i++) {
+            var icon = $forecast[i].children[1].getAttribute('data-name');
+            if (icon=="Clear") {
+                $forecast[i].children[1].setAttribute("class", "fa-solid fa-sun-bright");
+            }
+            else if (icon == "Clouds") {
+                $forecast[i].children[1].setAttribute("class", "fa-solid fa-clouds");
+            }
+            else if (icon == "Rain") {
+                $forecast[i].children[1].setAttribute("class", "fa-solid fa-clouds");
+            }
+            else if (icon == "Snow") {
+                $forecast[i].children[1].setAttribute("class","fa-solid fa-snowflakes");
+            }
+            else {
+                $forecast[i].children[1].setAttribute("class", "fa-solid fa-wrench");  
+            }
+        }
+    }
 })
