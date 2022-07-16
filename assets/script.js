@@ -8,4 +8,19 @@ $(document).ready(function() {
     var history;
     var cityName;
     var $forecast = document.querySelector(".card");
+// local storage for city search 
+    function loadHistory() {
+        if (!localStorage.getItem("index")) {
+            cityName = -1;
+            $("#searchHistory").append(`<li>Empty History</li><hr>`);
+            history = false;
+        }
+        else {
+            $("#searchHistory").empty();
+            cityIndex = localStorage.getItem("index");
+            for (let i=-1; i<cityIndex; i++) {
+                $("#searchHistory").prepend(`<li class="history" type="button">${localStorage.getItem(`City: ${i+1}`)}</li><hr>`);
+            }
+        }
+    }
 })
