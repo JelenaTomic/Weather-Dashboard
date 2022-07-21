@@ -1,6 +1,7 @@
 header {
     font-family: 'Lobster Two', cursive;
     text-align: center;
+    font-size:  35px;
     padding: 20px;
     color: #5FA3C8;
     background-color: #F0F8FF;
@@ -9,7 +10,7 @@ header {
 
 .content{
     font-family: 'Edu QLD Beginner';
-    font-size: 20px;
+    font-size: 25px;
     border-left: 1px solid #72A9DF;
     padding: 10px;
   
@@ -31,19 +32,24 @@ header {
     top: 3px;
 
 }
+.searchBtn i:hover {
+    font-size: 25px;
+    transition: all .3s ease-in-out;
+}
 
 #searchBar {
-    border-radius: 10px;
+    border-radius: 1px;
     margin-bottom: 10px;
     border-radius: 0;
     border-bottom:  10px solid #72A9DF;
     font-size: 15px;
+    text-align: center;
 }
 
 #searchHistory {
     background-color: #F0F8FF;
     border-radius: 55px;
-    border-radius: 0;
+    border-radius: 5px;
     border-bottom:  10px solid #72A9DF;
     list-style: none;
     padding-top: 10px;
@@ -57,7 +63,7 @@ header {
 }
 
 #cityInfo {
-    width: 73vw;
+
     padding-bottom: 15px;
     margin-top: 0px;
     margin-bottom: 25px;
@@ -65,7 +71,7 @@ header {
     border-width: 10px;
     border-style: solid;
     position: relative;
-    left: 12.5vw;
+    left: 30.5vw;
     top: 1vh;
 }
 
@@ -94,13 +100,10 @@ header {
     left: 1%;
 }
 
-#forecast {
-    width: 73vw;
-}
 
 #forecast div {
     background-color: #9EC2E5;
-    color: white;
+    color: black;
     margin: 15px;
     padding: 10px;
     min-width: 17%;
