@@ -8,7 +8,7 @@ $(document).ready(function() {
     var history;
     var cityName;
     var forecast = document.querySelectorAll(".card");
-    var mainweather = document.querySelector(".weather");
+  
     
     
 // local storage for city search 
@@ -138,7 +138,7 @@ $(document).ready(function() {
         cityVar = this.innerHTML;
         weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityVar}&appid=${api_key}`;
         forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityVar}&appid=${api_key}`;
-    })
+   
 
     var lat=""
     var lon=""
@@ -197,6 +197,6 @@ $(document).ready(function() {
         icons();
     });
 });
-
+})
 
 
