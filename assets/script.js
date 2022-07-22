@@ -8,6 +8,7 @@ $(document).ready(function() {
     var history;
     var cityName;
     var forecast = document.querySelectorAll(".card");
+    var mainweather = document.querySelector(".weather");
     
     
 // local storage for city search 
@@ -54,6 +55,28 @@ $(document).ready(function() {
             }
         }
     }
+
+    function mainicons() {
+    
+        for (let i=0; i<mainweather.length; i++) {
+            var icon = mainweather[i].children[1].getAttribute('data-name');
+            if (icon=="Clear") {
+                mainweather[i].children[1].setAttribute("class", "fas fa-cloud-sun");
+            }
+            else if (icon == "Clouds") {
+                mainweather[i].children[1].setAttribute("class", "fas fa-cloud");
+            }
+            else if (icon == "Rain") {
+                mainweather[i].children[1].setAttribute("class", "fas fa-cloud-rain");
+            }
+            else if (icon == "Snow") {
+                mainweather[i].children[1].setAttribute("class", "far fa-snowflake")
+            }
+            else {
+                mainweather[i].children[1].setAttribute("class", "fas fa-wrench");  
+            }
+        }
+    }
     // search button
     loadHistory();
       $(".searchBtn").on("click", function() {
@@ -82,10 +105,12 @@ $(document).ready(function() {
             lon = response.coord.lon;
             lat = response.coord.lat;
             $("#displayCity").text(`${response.name}  (${date})`);
-            var tempF =response.main.temp 
+            var tempF = Math.round(response.main.temp);
             $("#temperature").text(`Temperature: ${tempF}\F `);
             $("#humidity").text(`Humidity ${response.main.humidity}%`);
             $("#wind").text(`Wind   ${response.wind.speed} MPH`);
+            // console.log(response)
+            mainicons()
 
             uviURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${api_key}&lon=${lon}&lat=${lat}`; 
             $.ajax({
@@ -120,7 +145,7 @@ $(document).ready(function() {
             for (let i=0; i<forecast.length; i++) {
                 forecast[i].children[0].textContent = moment().add(i+1, "days").format('MMM Do YY');
                 forecast[i].children[1].setAttribute("data-name", response.list[i*8].weather[0].main);
-                var temp = response.list[i*8].main.temp ;
+                var temp = Math.round(response.list[i*8].main.temp );
                 var humidity = response.list[i*8].main.humidity;
                 forecast[i].children[2].textContent = `Temperature ${temp}\F`;
                 forecast[i].children[3].textContent = `Humidity ${humidity}%`;

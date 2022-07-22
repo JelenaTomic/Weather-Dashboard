@@ -32,10 +32,7 @@ header {
     top: 3px;
 
 }
-.searchBtn i:hover {
-    font-size: 25px;
-    transition: all .3s ease-in-out;
-}
+
 
 #searchBar {
     border-radius: 1px;
@@ -73,6 +70,7 @@ header {
     position: relative;
     left: 30.5vw;
     top: 1vh;
+    background-color: #D9E9F9;
 }
 
 #cityInfo div {
@@ -80,6 +78,10 @@ header {
     right: 10vw;
     padding: 15px;
     font: size 15px;;
+    border: #AACCEE (200, 200, 200, 0.8);
+    background-color:  #F0F8FF;
+    
+    
 }
 
 #displayCity {
