@@ -56,27 +56,7 @@ $(document).ready(function() {
         }
     }
 
-    function mainicons() {
-    
-        for (let i=0; i<mainweather.length; i++) {
-            var icon = mainweather[i].children[1].getAttribute('data-name');
-            if (icon=="Clear") {
-                mainweather[i].children[1].setAttribute("class", "fas fa-cloud-sun");
-            }
-            else if (icon == "Clouds") {
-                mainweather[i].children[1].setAttribute("class", "fas fa-cloud");
-            }
-            else if (icon == "Rain") {
-                mainweather[i].children[1].setAttribute("class", "fas fa-cloud-rain");
-            }
-            else if (icon == "Snow") {
-                mainweather[i].children[1].setAttribute("class", "far fa-snowflake")
-            }
-            else {
-                mainweather[i].children[1].setAttribute("class", "fas fa-wrench");  
-            }
-        }
-    }
+
     // search button
     loadHistory();
       $(".searchBtn").on("click", function() {
@@ -109,8 +89,8 @@ $(document).ready(function() {
             $("#temperature").text(`Temperature: ${tempF}\F `);
             $("#humidity").text(`Humidity ${response.main.humidity}%`);
             $("#wind").text(`Wind   ${response.wind.speed} MPH`);
-            // console.log(response)
-            mainicons()
+            $("#icon").attr("src", `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`)
+           
 
             uviURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${api_key}&lon=${lon}&lat=${lat}`; 
             $.ajax({

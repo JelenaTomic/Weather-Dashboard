@@ -1,3 +1,7 @@
+html{
+    background-color: #EAF4FF;
+}
+
 header {
     font-family: 'Lobster Two', cursive;
     text-align: center;
@@ -13,6 +17,7 @@ header {
     font-size: 25px;
     border-left: 1px solid #72A9DF;
     padding: 10px;
+    background-color: #EAF4FF;
   
 
 }
@@ -64,8 +69,6 @@ header {
     padding-bottom: 15px;
     margin-top: 0px;
     margin-bottom: 25px;
-    border: #AACCEE (200, 200, 200, 0.8);
-    border-width: 10px;
     border-style: solid;
     position: relative;
     left: 30.5vw;
@@ -75,10 +78,9 @@ header {
 
 #cityInfo div {
     position: relative;
-    right: 10vw;
+    right: 25vw;
     padding: 15px;
     font: size 15px;;
-    border: #AACCEE (200, 200, 200, 0.8);
     background-color:  #F0F8FF;
     
     
@@ -121,3 +123,5 @@ header {
     position: relative;
     left: -20px;
 }
+
+
